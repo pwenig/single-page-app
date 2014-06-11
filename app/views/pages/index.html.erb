@@ -23,5 +23,10 @@
 </main>
 
 <%= javascript_include_tag 'application' %>
+<script>
+  $(function() {
+    PeopleManager.initialize('<%= api_people_path %>');
+  });
+</script>
 </body>
 </html>
