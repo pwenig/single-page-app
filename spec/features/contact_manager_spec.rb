@@ -20,8 +20,14 @@ feature 'The one-page contact manager app' do
     expect(page).to have_content "15 Main St"
     expect(page).to have_content "Edna Example"
     expect(page).to have_content "15 Oak St"
+  end
 
-    expect(page).to have_title("Contact Manager")
+  scenario 'User can add a person and see them on the page', js: true do
+    visit '/'
+    fill_in 'First name', with:'John'
+    fill_in 'Last name', with:'Snow'
+    fill_in 'Address', with:'555 pearl st'
+    click_on 'Submit'
   end
 
 end
